@@ -1,0 +1,186 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+
+\usepackage{setspace}
+\usepackage{gensymb}
+\singlespacing
+\usepackage[cmex10]{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\begin{document}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\raggedbottom
+\setlength{\parindent}{0pt}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\ensuremath{\left\vert#1\right\vert}}
+\providecommand{\res}[1]{\ensuremath{\Res\displaylimits_{#1}}} 
+\providecommand{\norm}[1]{\ensuremath{\left\lVert#1\right\rVert}}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\ensuremath{\left[ #1 \right]}}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{EE5609: Matrix Theory\\
+          Assignment 11\\}
+\author{Lt Cdr Atul Mahajan\\MTech Artificial Intelligence\\AI20MTECH13001 }
+\maketitle
+\newpage
+%\tableofcontents
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\begin{abstract}
+This  document solves CSIR problem
+\end{abstract}
+Download the latex code from 
+%
+%
+%
+\begin{lstlisting}
+https://github.com/Atul 191/EE5609/Assignment11
+\end{lstlisting}
+%
+\section{\textbf{Problem}}
+Let $\R^2\xrightarrow{}\R^2$ be given by $f\brak{x,y}= \bra{x^2,y^2+\sin x}$. Then the derivative of f at \brak{x,y} is the linear transformation given by
+\begin{enumerate}
+    \item \myvec{2x&0\\\cos x&2y}
+    \item \myvec{2x&0\\2y&\cos x}
+    \item \myvec{2y& \cos x\\2x&0}
+    \item \myvec{2x&2y\\0&\cos x}
+\end{enumerate}
+\section{\textbf{Solution}}
+Let $f_1= x^2$ and $f_2= y^2+\sin x$.\\
+Begin by finding the derivative of f(x,y)
+\begin{align}
+D f(x,y)=\myvec{Df_1x& Df_1y\\Df_2x&Df_2y}\\
+=\myvec{2x&0\\\cos x&2y}
+\end{align}
+So option 1 is correct.\\
+Now to prove that   Derivatives is a linear transformation we dwell on the definition of linear transformation that it satisfies two properties i.e additivity and homogeneity as $\R^n\xrightarrow{}\R^m$
+\begin{align}
+ D\brak{cf}=cD\brak{f}\label{eq1}\\
+ D\brak{f+g}=D\brak{f}+D\brak{g}\label{eq2}
+\end{align}
+Now refer \eqref{eq1} we proceed as
+\begin{align}
+ D\brak{cf}=\myvec{Dcf_1& Dcf_1\\Dcf_2&Dcf_2}\\
+ =c\myvec{Df_1& Df_1\\Df_2&Df_2}\\
+ =cD\brak{f}\label{eq3}
+\end{align}
+Now refer \eqref{eq2} we proceed as
+\begin{align}
+  D\brak{f+g}=\myvec{D\brak{f_1+g_1}&D\brak{f_1+g_1}\\D\brak{f_2+g_2}&D\brak{f_2+g_2}}\\
+  \myvec{Df_1& Df_1\\Df_2&Df_2}+\myvec{Dg_1& Dg_1\\Dg_2&Dg_2}\\
+  =D\brak{f}+D\brak{g}
+\end{align}
+Hence both properties are satisfied so we can say that it is a linear transformation
+
+
+
+
+
+
+\end{document}
